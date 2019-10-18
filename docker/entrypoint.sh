@@ -70,8 +70,8 @@ Monit }"  >> /etc/monit/monitrc
 fi
 
 #      初始化ewomail数据
-#if [ ! -d "/ewomail/mysql/data/ewomail" ]; then
-if [ ! -d "/ewomail/mysql/data" ]; then
+if [ ! -d "/ewomail/mysql/data/ewomail" ]; then
+#if [ ! -d "/ewomail/mysql/data" ]; then
     echo '初始化ewomail数据'
     sed -i "s/Copyright.*版权所有/$COPYRIGHT/" /ewomail/www/ewomail-admin/upload/install.sql
     sed -i "s/ICP证.*号/$ICP/" /ewomail/www/ewomail-admin/upload/install.sql
