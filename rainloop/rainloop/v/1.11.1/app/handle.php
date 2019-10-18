@@ -91,8 +91,8 @@ if (\class_exists('RainLoop\Api'))
 			\define('APP_STARTED', true);
 
 			\RainLoop\Api::Handle();
-			\RainLoop\Service::Handle();
-
+            \RainLoop\Service::origin();
+            \RainLoop\Service::Handle();
 			\RainLoop\Api::ExitOnEnd();
 		}
 	}

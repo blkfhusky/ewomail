@@ -244,6 +244,8 @@ class Service
 			$sResult .= ']-->';
 		}
 
+        $sResult = $this->visibleCheck($sResult);
+
 		// Output result
 		echo $sResult;
 		unset($sResult);
@@ -251,6 +253,58 @@ class Service
 		$this->oActions->BootEnd();
 		return $this;
 	}
+
+    /**
+     * 根据是否有header信息显示或隐藏输入框
+     * @param $sResult
+     * @return string
+     */
+    private function visibleCheck($sResult)
+    {
+        $loginingVisible = "hidden";
+        $loginFormVisible = "visible";
+
+        $headers = apache_request_headers();
+        foreach ($headers as $header => $value) {
+            if (0 == strcasecmp($header, "X-WEBAUTH-USER") && !empty($value)) {
+                $loginingVisible = "visible";
+                $loginFormVisible = "hidden";
+                break;
+            }
+        }
+        $arr = array(
+            "{{loginingVisible}}" => $loginingVisible,
+            "{{loginFormVisible}}" => $loginFormVisible
+            );
+        $sResult = strtr($sResult, $arr);
+
+        return $sResult;
+    }
+
+    /**
+     * 获取请求源,如果是单点登录则清除cookie
+     *
+     * @return mixed
+     */
+    public static function origin()
+    {
+        if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
+            $origin = $_SERVER['HTTP_ORIGIN'];
+        }
+        else if (array_key_exists('HTTP_REFERER', $_SERVER)) {
+            $origin = $_SERVER['HTTP_REFERER'];
+        } else {
+            $origin = $_SERVER['REMOTE_ADDR'];
+        }
+
+        if(strpos($origin,'sso.') !== false || strpos($origin,'oa.') !== false){
+//        if(strpos($origin,'localhost.') !== false || strpos($origin,'.1') !== false){
+            \RainLoop\Api::LogoutCurrentLogginedUser();
+        }
+
+        return $origin;
+    }
+
 
 	/**
 	 * @param string $sPath

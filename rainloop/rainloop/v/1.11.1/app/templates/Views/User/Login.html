@@ -20,10 +20,14 @@
 				</div>
 			</div>
 			<div class="wrapper-parent">
+				<span style="color: white; font-size: 18px; visibility: {{loginingVisible}}">
+					正在登陆邮件服务器，请稍等...
+				</span>
 				<div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}">
+
 					<!-- ko template: { name: 'LoginWelcome' } --><!-- /ko -->
 				</div>
-				<form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
+				<form style="visibility: {{loginFormVisible}}" class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
 					{{INCLUDE/TopControlGroup/PLACE}}
 					<div class="controls plugin-mark-Login-TopControlGroup" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
 						<div class="input-append">
@@ -31,7 +35,8 @@
 								name="RainLoopEmail" id="RainLoopEmail"
 								style="padding-right: 35px;"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
-								data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest" data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
+								data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest, attr: {value: email() || 'defaultEmail'}"
+								   data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
 							<span class="add-on">
 								<i class="icon-mail"></i>
 							</span>
@@ -43,10 +48,11 @@
 								name="RainLoopPassword" id="RainLoopPassword"
 								style="padding-right: 35px;"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
-								data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
+								data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr: {value: password() || 'defaultPassword'}"
+								   data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
 							<span class="add-on" tabindex="-1" data-tooltip-join="left" data-bind="command: submitCommand, tooltip: 'LOGIN/BUTTON_SIGN_IN'">
 								<i class="icon-key" data-bind="visible: '' === password()"></i>
-								<button type="submit" class="btn-submit-icon-wrp" data-bind="visible: '' !== password()">
+								<button id="userLoginBtn" type="submit" class="btn-submit-icon-wrp" data-bind="visible: '' !== password()">
 									<i class="icon-right-middle login-submit-icon"></i>
 								</button>
 							</span>
@@ -117,7 +123,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="e-powered thm-powered" data-bind="visible: loginPowered">Powered by <a href="http://www.rainloop.net" target="_blank">RainLoop</a></div>
+			<div class="e-powered thm-powered" data-bind="visible: loginPowered">Powered by thundersdata</div>
 			<div class="e-mobile-switcher thm-mobile-switcher">
 				<span data-bind="visible: !mobile && mobileDevice">
 					<i class="icon-mobile"></i>

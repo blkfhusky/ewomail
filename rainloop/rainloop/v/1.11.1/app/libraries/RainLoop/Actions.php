@@ -2344,6 +2344,29 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		return \MailSo\Base\Utils::Md5Rand(APP_SALT.$sEmail);
 	}
 
+    /**
+     * 填充header中的单点登录用户信息
+     *
+     * @param $sEmail
+     * @param $sPassword
+     * @return array
+     */
+    private function fillSsoInfo($sEmail, $sPassword)
+    {
+        $arr = array($sEmail, $sPassword);
+        $headers = apache_request_headers();
+        foreach ($headers as $header => $value) {
+            if (0 == strcasecmp($header, "X-WEBAUTH-USER") && !empty($value)) {
+                $user = $value."@fnsmartcity.com";
+                $password = "11111111";
+                $arr[0] = $user;
+                $arr[1] = $password;
+                break;
+            }
+        }
+        return $arr;
+    }
+
 	/**
 	 * @return array
 	 *
@@ -2353,6 +2376,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	{
 		$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
 		$sPassword = $this->GetActionParam('Password', '');
+
+		$arr = $this->fillSsoInfo($sEmail, $sPassword);
+        $sEmail = $arr[0];
+        $sPassword = $arr[1];
+
 		$sLanguage = $this->GetActionParam('Language', '');
 		$bSignMe = '1' === (string) $this->GetActionParam('SignMe', '0');
 
@@ -10255,4 +10283,22 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		unset($mResponse);
 		return $mResult;
 	}
+
+    /**
+     * 从政务系统中同步所有用户
+     */
+    private function syncUsersFromOa()
+    {
+
+    }
+
+    private function saveOaContacts()
+    {
+
+    }
+
+    private function initUsers()
+    {
+
+    }
 }

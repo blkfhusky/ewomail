@@ -1,10 +1,12 @@
 #!/bin/bash
 
-domain=`hostname --domain`
-if [ ! "$domain" ]; then
-    echo '必须设置domainname'
-    exit;
-fi
+domain="fnsmartcity.com"
+
+# domain=`hostname --domain`
+# if [ ! "$domain" ]; then
+#     echo '必须设置domainname'
+#     exit;
+# fi
 
 echo "domain:$domain"
 
@@ -68,7 +70,8 @@ Monit }"  >> /etc/monit/monitrc
 fi
 
 #      初始化ewomail数据
-if [ ! -d "/ewomail/mysql/data/ewomail" ]; then
+#if [ ! -d "/ewomail/mysql/data/ewomail" ]; then
+if [ ! -d "/ewomail/mysql/data" ]; then
     echo '初始化ewomail数据'
     sed -i "s/Copyright.*版权所有/$COPYRIGHT/" /ewomail/www/ewomail-admin/upload/install.sql
     sed -i "s/ICP证.*号/$ICP/" /ewomail/www/ewomail-admin/upload/install.sql
@@ -78,6 +81,7 @@ if [ ! -d "/ewomail/mysql/data/ewomail" ]; then
     sed -i "s/zh-cn/$lang/" /ewomail/www/ewomail-admin/upload/install.sql
 
     /home/init_sql.php "$domain" "$MYSQL_ROOT_PASSWORD" "$MYSQL_MAIL_PASSWORD"
+#    /home/init_sql.php "rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com" "$MYSQL_ROOT_PASSWORD" "$MYSQL_MAIL_PASSWORD"
 fi
 
 if [ ! -e "/etc/ssl/certs/dovecot.pem" -o ! -e "/etc/ssl/private/dovecot.pem" ]; then
