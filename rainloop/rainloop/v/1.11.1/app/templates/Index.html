@@ -22,9 +22,22 @@
 		<link type="text/css" rel="stylesheet" href="{{BaseAppThemeCssLink}}" id="app-theme-link" />
 		<link rel="manifest" href="{{BaseAppManifestLink}}" />
 	</head>
-	<body>
+	<body onload="autoLogin()">
 		<div id="rl-app"></div>
 		<div id="rl-check"></div>
 		<script type="text/javascript" data-cfasync="false" src="{{BaseAppBootScriptLink}}"></script>
 	</body>
+
+	<script type="text/javascript">
+		function autoLogin() {
+			setTimeout(function () {
+				userEmail = document.getElementById("RainLoopEmail").value;
+				if (userEmail.length > 0 && userEmail.trim().length > 0) {
+					document.getElementById("userLoginBtn").click();
+				}
+			}, 200);
+		}
+
+	</script>
+
 </html>

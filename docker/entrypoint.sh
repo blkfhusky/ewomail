@@ -1,10 +1,12 @@
 #!/bin/bash
 
-domain=`hostname --domain`
-if [ ! "$domain" ]; then
-    echo '必须设置domainname'
-    exit;
-fi
+domain="fnsmartcity.com"
+
+# domain=`hostname --domain`
+# if [ ! "$domain" ]; then
+#     echo '必须设置domainname'
+#     exit;
+# fi
 
 echo "domain:$domain"
 
