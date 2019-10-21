@@ -31,7 +31,8 @@ class init_sql{
         }
 
         $this->domain = $domain;
-        $this->db = new mysqli('127.0.0.1','root','','mysql');
+//        $this->db = new mysqli('127.0.0.1','root','','mysql');
+        $this->db = new mysqli('rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com','root','8C44-14E9869A2343','mysql');
         if ($this->db->connect_error) {
             die('Connect Error('.$this->db->connect_errno.')'.$this->db->connect_error);
         }

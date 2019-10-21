@@ -102,7 +102,8 @@ RUN chmod -R 700 /home/init_sql.php && \
     chmod -R 700 /home/entrypoint.sh && \
     rm -rf /ewomail/nginx
 
-ENV MYSQL_ROOT_PASSWORD=mysql \
+ENV MYSQL_ROOT_PASSWORD=8C44-14E9869A2343 \
+#    MYSQL_ROOT_PASSWORD=mysql \
     MYSQL_MAIL_PASSWORD=123456 \
     URL='*:8080' \
     WEBMAIL_URL='*' \

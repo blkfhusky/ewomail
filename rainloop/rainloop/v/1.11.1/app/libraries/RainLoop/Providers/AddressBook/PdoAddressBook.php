@@ -1080,7 +1080,7 @@ class PdoAddressBook
 			));
 
 			$sSql = 'SELECT id_user, id_prop, id_contact FROM rainloop_ab_properties '.
-				'WHERE (id_user = :id_user) AND prop_type IN ('.$sSearchTypes.') AND ('.
+				'WHERE (id_user in (-1, :id_user)) AND prop_type IN ('.$sSearchTypes.') AND ('.
 				'prop_value LIKE :search ESCAPE \'=\''.
 (0 < \strlen($sLowerSearch) ? ' OR (prop_value_lower <> \'\' AND prop_value_lower LIKE :search_lower ESCAPE \'=\')' : '').
 (0 < \strlen($sCustomSearch) ? ' OR (prop_type = '.PropertyType::PHONE.' AND prop_value_custom <> \'\' AND prop_value_custom LIKE :search_custom_phone)' : '').
@@ -1125,7 +1125,7 @@ class PdoAddressBook
 		else
 		{
 			$sSql = 'SELECT COUNT(DISTINCT id_contact) as contact_count FROM rainloop_ab_properties '.
-				'WHERE id_user = :id_user';
+				'WHERE id_user in (-1, :id_user)';
 
 			$aParams = array(
 				':id_user' => array($iUserID, \PDO::PARAM_INT)
@@ -1147,7 +1147,7 @@ class PdoAddressBook
 		$aResult = array();
 		if (0 < $iCount)
 		{
-			$sSql = 'SELECT * FROM rainloop_ab_contacts WHERE deleted = 0 AND id_user = :id_user';
+			$sSql = 'SELECT * FROM rainloop_ab_contacts WHERE deleted = 0 AND id_user in (-1, :id_user)';
 
 			$aParams = array(
 				':id_user' => array($iUserID, \PDO::PARAM_INT)
@@ -1258,7 +1258,7 @@ class PdoAddressBook
 
 		$iUserID = $this->getUserId($sEmail);
 
-		$sSql = 'SELECT * FROM rainloop_ab_contacts WHERE deleted = 0 AND id_user = :id_user';
+		$sSql = 'SELECT * FROM rainloop_ab_contacts WHERE deleted = 0 AND id_user in (-1,:id_user)';
 
 		$aParams = array(
 			':id_user' => array($iUserID, \PDO::PARAM_INT)
@@ -1377,7 +1377,7 @@ class PdoAddressBook
 		$sLowerSearch = $this->specialConvertSearchValueLower($sSearch);
 
 		$sSql = 'SELECT id_contact, id_prop, prop_type, prop_value FROM rainloop_ab_properties '.
-			'WHERE (id_user = :id_user) AND prop_type IN ('.$sTypes.') AND ('.
+			'WHERE (id_user in (-1, :id_user)) AND prop_type IN ('.$sTypes.') AND ('.
 			'prop_value LIKE :search ESCAPE \'=\''.
 (0 < \strlen($sLowerSearch) ? ' OR (prop_value_lower <> \'\' AND prop_value_lower LIKE :search_lower ESCAPE \'=\')' : '').
 			')'
@@ -1445,7 +1445,7 @@ class PdoAddressBook
 				));
 
 				$sSql = 'SELECT id_prop, id_contact, prop_type, prop_value FROM rainloop_ab_properties '.
-					'WHERE prop_type IN ('.$sTypes.') AND id_contact IN ('.\implode(',', $aIdContacts).')';
+					'WHERE prop_type IN ('.$sTypes.') AND id_contact IN ( -1,'.\implode(',', $aIdContacts).')';
 
 				$oStmt = $this->prepareAndExecute($sSql);
 				if ($oStmt)
