@@ -188,7 +188,7 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'sync_interval'		=> array(20),
 				'type'				=> array('sqlite', ''),
 //				'pdo_dsn'			=> array('mysql:host=127.0.0.1;port=3306;dbname=rainloop', ''),
-				'pdo_dsn'			=> array('mysql:host=rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com;port=3306;dbname=rainloop', ''),
+				'pdo_dsn'			=> array('mysql:host=mysqlha-mysqlha-0.mysqlha-mysqlha.mysqlha;port=3306;dbname=rainloop', ''),
 				'pdo_user'			=> array('root', ''),
 				'pdo_password'		=> array('', ''),
 				'suggestions_limit' => array(30)

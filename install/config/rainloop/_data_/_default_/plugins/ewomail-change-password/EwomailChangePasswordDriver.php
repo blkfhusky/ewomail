@@ -6,7 +6,7 @@ class EwomailChangePasswordDriver implements \RainLoop\Providers\ChangePassword\
      * @var string
      */
 //    private $mHost = '127.0.0.1';
-    private $mHost = 'rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com';
+    private $mHost = 'mysqlha-mysqlha-0.mysqlha-mysqlha.mysqlha';
 
     /**
      * @var string
