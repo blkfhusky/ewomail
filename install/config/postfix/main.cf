@@ -734,7 +734,7 @@ mailbox_size_limit = 0
 
 #�ֽ�����
 message_size_limit = 0
-content_filter = smtp-amavis:[127.0.0.1]:10024
+#content_filter = smtp-amavis:[127.0.0.1]:10024
 
 policy_time_limit = 3600
 
@@ -745,5 +745,4 @@ maximal_backoff_time = 300s
 
 bounce_queue_lifetime = 300s
 maximal_queue_lifetime = 300s
-#退信模板
 bounce_template_file = /etc/postfix/bounce.cf
