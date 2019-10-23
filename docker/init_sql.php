@@ -40,8 +40,8 @@ class init_sql{
             die("Error loading character set utf8: ".$this->db->error);
         }
         
-        $this->import_sql();
-        $this->update_mail_config();
+//        $this->import_sql();
+//        $this->update_mail_config();
         $this->update_password($root_pwd,$mail_pwd);
     }
     
