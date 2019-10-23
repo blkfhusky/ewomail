@@ -207,10 +207,10 @@ CREATE TABLE `i_system_config` (
 -- ----------------------------
 -- Records of i_system_config
 -- ----------------------------
-INSERT INTO `i_system_config` VALUES ('copyright', 'Copyright © 2016-2017 | ewomail.com 版权所有');
-INSERT INTO `i_system_config` VALUES ('icp', 'ICP证：粤ICP备**********号');
+INSERT INTO `i_system_config` VALUES ('copyright', 'Copyright © 2019 | 版权所有');
+INSERT INTO `i_system_config` VALUES ('icp', '');
 INSERT INTO `i_system_config` VALUES ('lang', 'zh-cn');
-INSERT INTO `i_system_config` VALUES ('title', 'ewomail.com');
+INSERT INTO `i_system_config` VALUES ('title', '丰宁智慧城市邮件客户端');
 
 -- ----------------------------
 -- Table structure for i_users
