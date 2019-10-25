@@ -148,8 +148,8 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'language_admin'				=> array('en', 'Admin Panel interface language'),
 				'allow_languages_on_settings'	=> array(true, 'Allow language selection on settings screen'),
 
-				'allow_additional_accounts'		=> array(true, ''),
-				'allow_additional_identities'	=> array(true, ''),
+				'allow_additional_accounts'		=> array(false, ''),
+				'allow_additional_identities'	=> array(false, ''),
 
 				'messages_per_page'		=> array(20, ' Number of messages displayed on page by default'),
 

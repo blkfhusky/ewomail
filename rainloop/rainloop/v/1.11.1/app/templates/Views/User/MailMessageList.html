@@ -179,7 +179,6 @@
 						</div>
 						<div class="listDragOver" data-bind="css: {'viewAppendArea': dragOver() && '' === messageListError() && !popupVisibility(), 'dragOverEnter': dragOverEnter }, initDom: dragOverArea">
 							<i class="icon-down e-icon"></i>
-							<img src="../../../resources/images/icon-empty.png" width="80" height="80" alt="暂无数据" align="center">
 							<span class="i18n" data-i18n="MESSAGE_LIST/PUT_MESSAGE_HERE"></span>
 						</div>
 						<div class="listClear" data-bind="visible: clearListIsVisible()">
@@ -189,8 +188,9 @@
 							<span class="error" data-bind="text: messageListError"></span>
 						</div>
 						<div class="listEmptyList" data-bind="visible: !dragOver() && 0 === messageList().length && !messageListCompleteLoadingThrottle() && '' === messageListError() && '' === messageListSearch()">
-
-							<span class="i18n" data-i18n="MESSAGE_LIST/EMPTY_LIST"></span>
+                            <img src="icon-empty.png" width="80" height="80" align="center">
+                            <br/>
+							<span class="i18n" data-i18n="MESSAGE_LIST/EMPTY_LIST" style="color: #999999; size: 16px"></span>
 						</div>
 						<div class="listEmptyListLoading" data-bind="visible: !dragOver() && 0 === messageList().length &&
 							messageListCompleteLoadingThrottle() && '' === messageListError()">

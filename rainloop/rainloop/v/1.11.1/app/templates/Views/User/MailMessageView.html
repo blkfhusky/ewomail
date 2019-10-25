@@ -63,8 +63,9 @@
 				<div data-bind="visible: !message() && '' === messageError() && !hasCheckedMessages()" style="height: 100%">
 
 					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
-						<span class="i18n" data-bind="visible: !logoImg" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
-                        <img src="../../../resources/images/icon-empty.png" alt="暂无邮件" height="80" width="80" align="center">
+						<img src="icon-empty.png" height="80" width="80" align="center">
+						<br/>
+						<span class="i18n" data-bind="visible: !logoImg" data-i18n="MESSAGE/MESSAGE_VIEW_DESC" style="size: 16px; color: #999999"></span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
 							<img style="height: 99%" data-bind="attr: { 'src': logoImg }" />
 						</div>
