@@ -11,7 +11,7 @@
 if(!defined("PATH")) exit;
 
 /**
- * 检查管理员是否有登陆web控制面板权限
+ * 检查管理员是否有登录web控制面板权限
  */
 Rout::get('is_webmail',function(){
     $username = iany('username');

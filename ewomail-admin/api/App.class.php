@@ -83,12 +83,12 @@ class App
     }
     
     /**
-     * 检查是否已登陆
+     * 检查是否已登录
      * */
     public static function checkLogin()
     {
         $loginInfo = Session::get('loginInfo');
-        //跳过Index控制器的登陆检查
+        //跳过Index控制器的登录检查
         if(MODULE!='Index' && !$loginInfo){
             header("Location:/Index/login");
             exit;
@@ -97,7 +97,7 @@ class App
     }
     
     /**
-     * 设置登陆信息
+     * 设置登录信息
      * */
     public static function setLoginInfo()
     {

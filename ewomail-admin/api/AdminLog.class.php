@@ -15,7 +15,7 @@ class AdminLog extends App
 {
     
     private static $ac = [
-        'login'=>'登陆',
+        'login'=>'登录',
         'add'=>'添加',
         'edit'=>'修改',
         'del'=>'删除'

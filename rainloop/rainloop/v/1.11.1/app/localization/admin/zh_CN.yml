@@ -1,6 +1,6 @@
 zh_CN:
   LOGIN:
-    LABEL_LOGIN: "登陆"
+    LABEL_LOGIN: "登录"
     LABEL_PASSWORD: "密码"
     BUTTON_LOGIN: "登录到控制面板"
   TOP_PANEL:
@@ -8,7 +8,7 @@ zh_CN:
     LABEL_ADMIN_PANEL: "控制面板"
   TABS_LABELS:
     LABEL_GENERAL_NAME: "常规"
-    LABEL_LOGIN_NAME: "登陆"
+    LABEL_LOGIN_NAME: "登录"
     LABEL_BRANDING_NAME: "Logo"
     LABEL_CONTACTS_NAME: "联系人"
     LABEL_DOMAINS_NAME: "域名"
@@ -41,17 +41,17 @@ zh_CN:
       <strong><a href="#/security">更改</a></strong>
       为其他的字符串。
   TAB_LOGIN:
-    LEGEND_LOGIN_SCREEN: "登陆界面"
+    LEGEND_LOGIN_SCREEN: "登录界面"
     LABEL_DEFAULT_DOMAIN: "默认域名"
     LABEL_DETERMINE_USER_DOMAIN: "尝试确定用户域名"
-    LABEL_ALLOW_LANGUAGES_ON_LOGIN: "允许在登陆界面选择语言"
+    LABEL_ALLOW_LANGUAGES_ON_LOGIN: "允许在登录界面选择语言"
     LABEL_DETERMINE_USER_LANGUAGE: "尝试确定用户语言"
   TAB_BRANDING:
     LEGEND_BRANDING: "Logo"
     LABEL_PAGE_TITLE: "页面标题"
     LABEL_LOADING_DESCRIPTION: "正在加载介绍"
     LABEL_FAVICON_URL: "图标"
-    LEGEND_LOGIN: "登陆"
+    LEGEND_LOGIN: "登录"
     LABEL_LOGIN_LOGO: "Logo"
     LABEL_LOGIN_DESCRIPTION: "介绍"
     LABEL_LOGIN_BACKGROUND: "背景"
@@ -100,7 +100,7 @@ zh_CN:
     LABEL_SHOW_PHP_INFO: "显示PHP信息"
     LEGEND_ADMIN_PANEL_ACCESS_CREDENTIALS: "管理员面板访问凭据"
     LABEL_CURRENT_PASSWORD: "当前密码"
-    LABEL_NEW_LOGIN: "新的登陆用户名"
+    LABEL_NEW_LOGIN: "新的登录用户名"
     LABEL_NEW_PASSWORD: "新密码"
     LABEL_REPEAT_PASSWORD: "重复"
     BUTTON_UPDATE_PASSWORD: "更新密码"
@@ -242,7 +242,7 @@ zh_CN:
     CANT_DELETE_MESSAGE: "无法删除邮件"
     CANT_MOVE_MESSAGE: "无法移动邮件"
     CANT_SAVE_MESSAGE: "无法保存邮件"
-    CANT_SEND_MESSAGE: "无法发送邮件"
+    CANT_SEND_MESSAGE: "无法发送邮件，请联系管理员确认目标账户是否存在(仅支持内部邮件@fnsmartcity.com)"
     INVALID_RECIPIENTS: "无效接收者"
     CANT_SAVE_FILTERS: "无法保存过滤器"
     CANT_GET_FILTERS: "无法获取过滤器"

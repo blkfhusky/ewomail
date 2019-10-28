@@ -14,10 +14,10 @@
  */
 class Admin extends App
 {
-    //管理员登陆ID
+    //管理员登录ID
     public static $aid;
     
-    //管理员登陆信息
+    //管理员登录信息
     public static $info;
 
     /**

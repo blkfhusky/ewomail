@@ -5949,6 +5949,17 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$oToEmails = \MailSo\Mime\EmailCollection::NewInstance($sTo);
 		if ($oToEmails && $oToEmails->Count())
 		{
+		    // 筛选出外部邮箱
+            $toMailsStr = $oToEmails->ToString();
+            $toMails = explode(",", $toMailsStr);
+            for ($i = 0; $i < count($toMails); ++$i)
+            {
+                $toMail= (string)$toMails[$i];
+                if (strpos($toMail, "@fnsmartcity.com") === false) {
+                    throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::CantSendMessage);
+                }
+            }
+
 			$oMessage->SetTo($oToEmails);
 		}
 
