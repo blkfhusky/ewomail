@@ -27629,11 +27629,11 @@ var SettingsUserScreen = function (_AbstractSettingsScre) {
 		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_12_Settings_User_General__["a" /* GeneralUserSettings */], 'SettingsGeneral', 'SETTINGS_LABELS/LABEL_GENERAL_NAME', 'general', true);
 
 		if (__WEBPACK_IMPORTED_MODULE_7_Stores_User_App__["a" /* default */].contactsIsAllowed()) {
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_13_Settings_User_Contacts__["a" /* ContactsUserSettings */], 'SettingsContacts', 'SETTINGS_LABELS/LABEL_CONTACTS_NAME', 'contacts');
+			// __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_13_Settings_User_Contacts__["a" /* ContactsUserSettings */], 'SettingsContacts', 'SETTINGS_LABELS/LABEL_CONTACTS_NAME', 'contacts');
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].AdditionalAccounts) || __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].Identities)) {
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_14_Settings_User_Accounts__["a" /* AccountsUserSettings */], 'SettingsAccounts', __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].AdditionalAccounts) ? 'SETTINGS_LABELS/LABEL_ACCOUNTS_NAME' : 'SETTINGS_LABELS/LABEL_IDENTITIES_NAME', 'accounts');
+			// __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_14_Settings_User_Accounts__["a" /* AccountsUserSettings */], 'SettingsAccounts', __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].AdditionalAccounts) ? 'SETTINGS_LABELS/LABEL_ACCOUNTS_NAME' : 'SETTINGS_LABELS/LABEL_IDENTITIES_NAME', 'accounts');
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].Sieve)) {
@@ -27641,7 +27641,7 @@ var SettingsUserScreen = function (_AbstractSettingsScre) {
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].AutoLogout) || __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].TwoFactor)) {
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_16_Settings_User_Security__["a" /* SecurityUserSettings */], 'SettingsSecurity', 'SETTINGS_LABELS/LABEL_SECURITY_NAME', 'security');
+			// __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_16_Settings_User_Security__["a" /* SecurityUserSettings */], 'SettingsSecurity', 'SETTINGS_LABELS/LABEL_SECURITY_NAME', 'security');
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_8_Stores_User_Account__["a" /* default */].isRootAccount() && (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["settingsGet"]('AllowGoogleSocial') && __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["settingsGet"]('AllowGoogleSocialAuth') || __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["settingsGet"]('AllowFacebookSocial') || __WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["settingsGet"]('AllowTwitterSocial'))) {
@@ -27649,7 +27649,7 @@ var SettingsUserScreen = function (_AbstractSettingsScre) {
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["settingsGet"]('ChangePasswordIsAllowed')) {
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_18_Settings_User_ChangePassword__["a" /* ChangePasswordUserSettings */], 'SettingsChangePassword', 'SETTINGS_LABELS/LABEL_CHANGE_PASSWORD_NAME', 'change-password');
+			// __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_18_Settings_User_ChangePassword__["a" /* ChangePasswordUserSettings */], 'SettingsChangePassword', 'SETTINGS_LABELS/LABEL_CHANGE_PASSWORD_NAME', 'change-password');
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].Templates)) {
@@ -27661,7 +27661,7 @@ var SettingsUserScreen = function (_AbstractSettingsScre) {
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].Themes)) {
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_21_Settings_User_Themes__["a" /* ThemesUserSettings */], 'SettingsThemes', 'SETTINGS_LABELS/LABEL_THEMES_NAME', 'themes');
+			// __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Knoin_Knoin__["addSettingsViewModel"])(__WEBPACK_IMPORTED_MODULE_21_Settings_User_Themes__["a" /* ThemesUserSettings */], 'SettingsThemes', 'SETTINGS_LABELS/LABEL_THEMES_NAME', 'themes');
 		}
 
 		if (__WEBPACK_IMPORTED_MODULE_9_Storage_Settings__["capa"](__WEBPACK_IMPORTED_MODULE_3_Common_Enums__["Capa"].OpenPGP)) {
