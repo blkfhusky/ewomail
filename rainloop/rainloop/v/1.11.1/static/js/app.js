@@ -516,7 +516,7 @@ function replySubjectAdd(prefix, subject) {
 		fwd = false;
 	}
 
-	return trim((prefixIsRe ? 'Re: ' : 'Fwd: ') + (re ? 'Re: ' : '') + (fwd ? 'Fwd: ' : '') + trim(parts.join(':')));
+	return trim((prefixIsRe ? '回复: ' : '转发: ') + (re ? '回复: ' : '') + (fwd ? '转发: ' : '') + trim(parts.join(':')));
 }
 
 /**
@@ -3545,7 +3545,7 @@ var htmlEditorDefaultConfig = {
 	'removeButtons': 'Format,Undo,Redo,Cut,Copy,Paste,Anchor,Strike,Subscript,Superscript,Image,SelectAll,Source',
 	'removeDialogTabs': 'link:advanced;link:target;image:advanced;images:advanced',
 
-	'extraPlugins': 'plain,signature',
+	'extraPlugins': 'plain,signature,wordcount,notification',
 
 	'allowedContent': true,
 	'extraAllowedContent': true,
