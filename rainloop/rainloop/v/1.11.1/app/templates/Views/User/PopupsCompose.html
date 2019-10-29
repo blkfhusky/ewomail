@@ -100,8 +100,8 @@
 											data-bind="click: function () { showBcc(true); }"></span>
 										&nbsp;&nbsp;
 									</span>
-									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_REPLY_TO"
-										data-bind="visible: !showReplyTo(), click: function () { showReplyTo(true); }"></span>
+<!--									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_REPLY_TO"-->
+<!--										data-bind="visible: !showReplyTo(), click: function () { showReplyTo(true); }"></span>-->
 									&nbsp;
 								</span>
 							</div>
@@ -146,7 +146,7 @@
 								<span class="i18n" data-i18n="COMPOSE/TITLE_SUBJECT"></span>
 							</div>
 							<div class="e-cell e-value">
-								<input type="text" size="70" autocomplete="off" data-bind="textInput: subject, hasFocus: subject.focused" />
+								<input type="text" size="70" autocomplete="off" data-bind="textInput: subject, hasFocus: subject.focused" maxlength="100" />
 							</div>
 						</div>
 						<div class="e-row">

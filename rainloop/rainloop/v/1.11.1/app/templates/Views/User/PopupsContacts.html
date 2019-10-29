@@ -26,44 +26,44 @@
 <!--					</a>-->
 <!--				</div>-->
 
-				<div class="btn-group dropdown colored-toggle" data-bind="registrateBootstrapDropdown: true">
-					<a id="contacts-more-dropdown-id" class="btn single dropdown-toggle buttonMore" href="#" tabindex="-1" data-toggle="dropdown">
-						<i data-bind="css: {'icon-list': !contacts.importing() && !contacts.syncing(),
-							'icon-spinner animated': contacts.importing() || contacts.syncing()}"></i>
-					</a>
-					<ul class="dropdown-menu g-ui-menu pull-right" role="menu" aria-labelledby="contacts-more-dropdown-id">
-						<li class="e-item" role="presentation">
-							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="initDom: importUploaderButton">
-								<i data-bind="css: {'icon-import': !contacts.importing(), 'icon-spinner animated': contacts.importing}"></i>
-								&nbsp;&nbsp;
-								<span class="i18n" data-i18n="CONTACTS/BUTTON_IMPORT"></span>
-							</a>
-						</li>
-						<li class="divider" role="presentation" data-bind="visible: allowExport"></li>
-						<li class="e-item" role="presentation" data-bind="visible: allowExport">
-							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: exportCsv">
-								<i data-bind="css: {'icon-export': !contacts.exportingCsv(), 'icon-spinner animated': contacts.exportingCsv}"></i>
-								&nbsp;&nbsp;
-								<span class="i18n" data-i18n="CONTACTS/BUTTON_EXPORT_CSV"></span>
-							</a>
-						</li>
-						<li class="e-item" role="presentation" data-bind="visible: allowExport" >
-							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: exportVcf">
-								<i data-bind="css: {'icon-export': !contacts.exportingVcf(), 'icon-spinner animated': contacts.exportingVcf}"></i>
-								&nbsp;&nbsp;
-								<span class="i18n" data-i18n="CONTACTS/BUTTON_EXPORT_VCARD"></span>
-							</a>
-						</li>
-						<li class="divider" role="presentation" data-bind="visible: enableContactsSync() && allowContactsSync()"></li>
-						<li class="e-item" role="presentation" data-bind="visible: enableContactsSync() && allowContactsSync()">
-							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="command: syncCommand">
-								<i data-bind="css: {'icon-sync': !contacts.syncing(), 'icon-spinner animated': contacts.syncing}"></i>
-								&nbsp;&nbsp;
-								<span class="i18n" data-i18n="CONTACTS/BUTTON_SYNC"></span>
-							</a>
-						</li>
-					</ul>
-				</div>
+<!--				<div class="btn-group dropdown colored-toggle" data-bind="registrateBootstrapDropdown: true">-->
+<!--					<a id="contacts-more-dropdown-id" class="btn single dropdown-toggle buttonMore" href="#" tabindex="-1" data-toggle="dropdown">-->
+<!--						<i data-bind="css: {'icon-list': !contacts.importing() && !contacts.syncing(),-->
+<!--							'icon-spinner animated': contacts.importing() || contacts.syncing()}"></i>-->
+<!--					</a>-->
+<!--					<ul class="dropdown-menu g-ui-menu pull-right" role="menu" aria-labelledby="contacts-more-dropdown-id">-->
+<!--						<li class="e-item" role="presentation">-->
+<!--							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="initDom: importUploaderButton">-->
+<!--								<i data-bind="css: {'icon-import': !contacts.importing(), 'icon-spinner animated': contacts.importing}"></i>-->
+<!--								&nbsp;&nbsp;-->
+<!--								<span class="i18n" data-i18n="CONTACTS/BUTTON_IMPORT"></span>-->
+<!--							</a>-->
+<!--						</li>-->
+<!--						<li class="divider" role="presentation" data-bind="visible: allowExport"></li>-->
+<!--						<li class="e-item" role="presentation" data-bind="visible: allowExport">-->
+<!--							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: exportCsv">-->
+<!--								<i data-bind="css: {'icon-export': !contacts.exportingCsv(), 'icon-spinner animated': contacts.exportingCsv}"></i>-->
+<!--								&nbsp;&nbsp;-->
+<!--								<span class="i18n" data-i18n="CONTACTS/BUTTON_EXPORT_CSV"></span>-->
+<!--							</a>-->
+<!--						</li>-->
+<!--						<li class="e-item" role="presentation" data-bind="visible: allowExport" >-->
+<!--							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: exportVcf">-->
+<!--								<i data-bind="css: {'icon-export': !contacts.exportingVcf(), 'icon-spinner animated': contacts.exportingVcf}"></i>-->
+<!--								&nbsp;&nbsp;-->
+<!--								<span class="i18n" data-i18n="CONTACTS/BUTTON_EXPORT_VCARD"></span>-->
+<!--							</a>-->
+<!--						</li>-->
+<!--						<li class="divider" role="presentation" data-bind="visible: enableContactsSync() && allowContactsSync()"></li>-->
+<!--						<li class="e-item" role="presentation" data-bind="visible: enableContactsSync() && allowContactsSync()">-->
+<!--							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="command: syncCommand">-->
+<!--								<i data-bind="css: {'icon-sync': !contacts.syncing(), 'icon-spinner animated': contacts.syncing}"></i>-->
+<!--								&nbsp;&nbsp;-->
+<!--								<span class="i18n" data-i18n="CONTACTS/BUTTON_SYNC"></span>-->
+<!--							</a>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
 
 			</div>
 		</div>
@@ -172,7 +172,9 @@
 				<div class="content g-scrollbox" data-scroller-shadows-content>
 					<div class="content-wrapper">
 						<div class="b-contact-view-desc" data-bind="visible: emptySelection">
-							<span class="i18n" data-i18n="CONTACTS/CONTACT_VIEW_DESC" style="font-size: 16px; color: #999999"></span>
+							<img src="/rainloop/v/1.11.1/app/resources/images/icon-emptyconcact.png" width="80" height="80" align="center">
+							<br/>
+							<span class="i18n" data-i18n="CONTACTS/CONTACT_VIEW_DESC" style="color: #999999; font-size: 16px"></span>
 						</div>
 						<div data-bind="visible: !emptySelection()">
 							<div class="form-horizontal top-part">
@@ -220,7 +222,7 @@
 													data-bind="value: value, hasFocus: focused, valueUpdate: 'keyup'" />
 											</div>
 										</div>
-										<a href="javascript:void(0);" class="g-ui-link add-link i18n" data-bind="visible: !viewReadOnly(), click: addNewEmail" data-i18n="CONTACTS/LINK_ADD_EMAIL"></a>
+<!--										<a href="javascript:void(0);" class="g-ui-link add-link i18n" data-bind="visible: !viewReadOnly(), click: addNewEmail" data-i18n="CONTACTS/LINK_ADD_EMAIL"></a>-->
 									</div>
 								</div>
 								<div class="control-group" data-bind="visible: 0 < viewPropertiesPhones().length">
