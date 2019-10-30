@@ -1,6 +1,6 @@
 {
-	"name": "RainLoop Webmail",
-	"short_name": "RainLoop",
+	"name": "丰宁智慧城市邮件客户端",
+	"short_name": "丰宁智慧城市",
 	"description": "Simple, modern & fast web-based email client",
 	"display": "standalone",
 	"icons": [{

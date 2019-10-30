@@ -136,8 +136,8 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 			'webmail' => array(
 
-				'title'							=> array('RainLoop Webmail', 'Text displayed as page title'),
-				'loading_description'			=> array('RainLoop', 'Text displayed on startup'),
+				'title'							=> array('丰宁智慧城市邮件客户端', 'Text displayed as page title'),
+				'loading_description'			=> array('丰宁智慧城市', 'Text displayed on startup'),
 				'favicon_url'					=> array('', ''),
 
 				'theme'							=> array('Default', 'Theme used by default'),
