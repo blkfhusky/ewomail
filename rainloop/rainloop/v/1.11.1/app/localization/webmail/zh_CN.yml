@@ -672,7 +672,7 @@ zh_CN:
     CANT_GET_FILTERS: "无法获取筛选器规则"
     FILTERS_ARE_NOT_CORRECT: "不正确的筛选器规则"
     CANT_CREATE_FOLDER: "无法创建文件夹"
-    CANT_RENAME_FOLDER: "无法重命名文件夹"
+    CANT_RENAME_FOLDER: "无法重命名系统默认文件夹"
     CANT_DELETE_FOLDER: "无法删除文件夹"
     CANT_DELETE_NON_EMPTY_FOLDER: "无法删除非空文件夹"
     CANT_SUBSCRIBE_FOLDER: "无法订阅文件夹"

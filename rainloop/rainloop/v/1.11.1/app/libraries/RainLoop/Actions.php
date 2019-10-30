@@ -5230,7 +5230,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'Send Mail' => \MailSo\Imap\Enumerations\FolderType::SENT,
 				'Send Mails' => \MailSo\Imap\Enumerations\FolderType::SENT,
 
-				'Drafts' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
+				'草稿箱' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 
 				'Draft' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 				'Draft Mail' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
@@ -5249,7 +5249,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'Deleted' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 				'Bin' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 
-				'Archive' => \MailSo\Imap\Enumerations\FolderType::ALL,
+				'存档' => \MailSo\Imap\Enumerations\FolderType::ALL,
 				'Archives' => \MailSo\Imap\Enumerations\FolderType::ALL,
 
 				'All' => \MailSo\Imap\Enumerations\FolderType::ALL,
