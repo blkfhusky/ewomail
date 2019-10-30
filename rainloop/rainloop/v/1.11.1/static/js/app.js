@@ -31800,7 +31800,7 @@ var FolderListMailBoxUserView = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED
 		});
 
 		_this.isInboxStarred = __WEBPACK_IMPORTED_MODULE_5_ko__["a" /* default */].computed(function () {
-			return __WEBPACK_IMPORTED_MODULE_14_Stores_User_Folder__["a" /* default */].currentFolder() && __WEBPACK_IMPORTED_MODULE_14_Stores_User_Folder__["a" /* default */].currentFolder().isInbox() && -1 < __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_Common_Utils__["trim"])(__WEBPACK_IMPORTED_MODULE_15_Stores_User_Message__["a" /* default */].messageListSearch()).indexOf('is:flagged');
+			return __WEBPACK_IMPORTED_MODULE_14_Stores_User_Folder__["a" /* default */].currentFolder() && __WEBPACK_IMPORTED_MODULE_14_Stores_User_Folder__["a" /* default */].currentFolder().isInbox() && -1 < __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_Common_Utils__["trim"])(__WEBPACK_IMPORTED_MODULE_15_Stores_User_Message__["a" /* default */].messageListSearch()).indexOf('是:标记');
 		});
 		return _this;
 	}
@@ -31840,7 +31840,7 @@ var FolderListMailBoxUserView = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED
 					}
 
 					if (starred) {
-						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_Knoin_Knoin__["setHash"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Common_Links__["j" /* mailBox */])(folder.fullNameHash, 1, 'is:flagged'));
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_Knoin_Knoin__["setHash"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Common_Links__["j" /* mailBox */])(folder.fullNameHash, 1, '是:标记'));
 					} else {
 						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_18_Knoin_Knoin__["setHash"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_Common_Links__["j" /* mailBox */])(folder.fullNameHash));
 					}

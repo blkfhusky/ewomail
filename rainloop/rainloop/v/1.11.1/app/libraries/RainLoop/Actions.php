@@ -5230,7 +5230,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'Send Mail' => \MailSo\Imap\Enumerations\FolderType::SENT,
 				'Send Mails' => \MailSo\Imap\Enumerations\FolderType::SENT,
 
-				'草稿箱' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
+				'Drafts' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 
 				'Draft' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 				'Draft Mail' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
@@ -5245,11 +5245,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'Bulk Mail' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 				'Bulk Mails' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 
-				'已删除邮件' => \MailSo\Imap\Enumerations\FolderType::TRASH,
+				'Trash' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 				'Deleted' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 				'Bin' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 
-				'存档' => \MailSo\Imap\Enumerations\FolderType::ALL,
+				'Archive' => \MailSo\Imap\Enumerations\FolderType::ALL,
 				'Archives' => \MailSo\Imap\Enumerations\FolderType::ALL,
 
 				'All' => \MailSo\Imap\Enumerations\FolderType::ALL,
@@ -5623,8 +5623,19 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		try
 		{
+		    // 系统文件夹不允许修改
+            $systemFolders = array("INDEX", "已删除", "草稿箱", "垃圾箱", "已发送", "已存档");
+            $sPrevFolderFullName = \MailSo\Base\Utils::ConvertEncoding($sPrevFolderFullNameRaw,
+                \MailSo\Base\Enumerations\Charset::UTF_7_IMAP,
+                \MailSo\Base\Enumerations\Charset::UTF_8);
+            if (in_array($sPrevFolderFullName, $systemFolders))
+            {
+                throw new \MailSo\Mail\Exceptions\RuntimeException("cannot rename system folders");
+            }
+
 			$this->MailClient()->FolderRename($sPrevFolderFullNameRaw, $sNewTopFolderNameInUtf,
 				!!$this->Config()->Get('labs', 'use_imap_list_subscribe', true));
+
 		}
 		catch (\Exception $oException)
 		{

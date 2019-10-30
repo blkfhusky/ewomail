@@ -1885,6 +1885,28 @@ class MailClient
 		return \is_array($aResultUids) ? $aResultUids : array();
 	}
 
+    /**
+     * 中文搜索关键字替换为英文关键字
+     * @param string $sSearch
+     * @return string
+     */
+    public function replaceSearchTag($sSearch)
+    {
+        $sSearch = strtr($sSearch, array(
+            "是" => "is",
+            "包含" => "has",
+            "发送自" => "from",
+            "发送到" => "to",
+            "主题" => "subject",
+            "附件" => "attachment",
+            "不可见" => "unseen",
+            "标记" => "flagged",
+            "日期" => "date",
+            "内容" => "text",
+        ));
+        return $sSearch;
+    }
+
 	/**
 	 * @param string $sFolderName
 	 * @param int $iOffset = 0
@@ -1909,6 +1931,8 @@ class MailClient
 	{
 		$sFilter = \trim($sFilter);
 		$sSearch = \trim($sSearch);
+		// 搜索字符转换为英文
+        $sSearchRep = $this->replaceSearchTag($sSearch);
 		if (!\MailSo\Base\Validator::RangeInt($iOffset, 0) ||
 			!\MailSo\Base\Validator::RangeInt($iLimit, 0, 999))
 		{
@@ -1923,7 +1947,7 @@ class MailClient
 		$oMessageCollection->FolderName = $sFolderName;
 		$oMessageCollection->Offset = $iOffset;
 		$oMessageCollection->Limit = $iLimit;
-		$oMessageCollection->Search = $sSearch;
+		$oMessageCollection->Search = $sSearchRep;
 		$oMessageCollection->ThreadUid = $sThreadUid;
 		$oMessageCollection->Filtered = '' !== \MailSo\Config::$MessageListPermanentFilter;
 
@@ -2030,9 +2054,9 @@ class MailClient
 				$aUids = $mAllSortedUids;
 			}
 
-			if (0 < \strlen($sSearch) && \is_array($aUids))
+			if (0 < \strlen($sSearchRep) && \is_array($aUids))
 			{
-				$aSearchedUids = $this->GetUids($oCacher, $sSearch, $sFilter,
+				$aSearchedUids = $this->GetUids($oCacher, $sSearchRep, $sFilter,
 					$oMessageCollection->FolderName, $oMessageCollection->FolderHash);
 
 				if (\is_array($aSearchedUids) && 0 < \count($aSearchedUids))
@@ -2094,9 +2118,9 @@ class MailClient
 			$oMessageCollection->MessageCount = $iMessageRealCount;
 			$oMessageCollection->MessageUnseenCount = $iMessageUnseenCount;
 
-			if (0 < \strlen($sSearch) || $bUseFilter)
+			if (0 < \strlen($sSearchRep) || $bUseFilter)
 			{
-				$aUids = $this->GetUids($oCacher, $sSearch, $sFilter,
+				$aUids = $this->GetUids($oCacher, $sSearchRep, $sFilter,
 					$oMessageCollection->FolderName, $oMessageCollection->FolderHash);
 
 				if (0 < \count($aUids))
@@ -2143,6 +2167,8 @@ class MailClient
 				}
 			});
 		}
+
+        $oMessageCollection->Search = $sSearch;
 
 		return $oMessageCollection;
 	}

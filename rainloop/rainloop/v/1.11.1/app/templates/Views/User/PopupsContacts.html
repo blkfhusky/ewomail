@@ -172,7 +172,7 @@
 				<div class="content g-scrollbox" data-scroller-shadows-content>
 					<div class="content-wrapper">
 						<div class="b-contact-view-desc" data-bind="visible: emptySelection">
-							<img src="/rainloop/v/1.11.1/app/resources/images/icon-emptyconcact.png" width="80" height="80" align="center">
+							<img src="/rainloop/v/1.11.1/app/resources/images/icon-emptycontact.png" width="80" height="80" align="center">
 							<br/>
 							<span class="i18n" data-i18n="CONTACTS/CONTACT_VIEW_DESC" style="color: #999999; font-size: 16px"></span>
 						</div>
@@ -217,7 +217,7 @@
 										<div data-bind="foreach: viewPropertiesEmails">
 											<div class="property-line">
 												<span class="contactValueStatic" data-bind="text: value" />
-												<input type="text" class="contactValueInput"
+												<input type="text" class="contactValueInput" disabled="disabled"
 													autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 													data-bind="value: value, hasFocus: focused, valueUpdate: 'keyup'" />
 											</div>
