@@ -206,3 +206,43 @@ a > img {
 	max-height: 1080px;
 	margin:0 auto;
 }
+
+@font-face {
+	font-family: "宋体";
+	src: url(./winfont/simsun.ttc);
+}
+
+@font-face {
+	font-family: "黑体";
+	src: url(./winfont/simhei.ttf);
+}
+
+@font-face {
+	font-family: "仿宋_GB2312";
+	src: url(./winfont/fangsong_GB2312.ttf);
+}
+
+@font-face {
+	font-family: "楷体_GB2312";
+	src: url(./winfont/simkai.ttf);
+}
+
+@font-face {
+	font-family: "隶书";
+	src: url(./winfont/simli.ttf);
+}
+
+@font-face {
+	font-family: "幼圆";
+	src: url(./winfont/fzytk.ttf);
+}
+
+@font-face {
+	font-family: "微软雅黑";
+	src: url(./winfont/msyh.ttc);
+}
+
+@font-face {
+	font-family: "方正小标宋";
+	src: url(./winfont/fzxbs.ttf);
+}
