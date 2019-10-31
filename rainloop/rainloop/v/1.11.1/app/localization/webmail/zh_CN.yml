@@ -268,7 +268,7 @@ zh_CN:
     LABEL_BCC: "密送"
     LABEL_SIGNATURE_INSERT_BEFORE: "在回信中插入签名再引用来信。"
   POPUPS_CREATE_FOLDER:
-    TITLE_CREATE_FOLDER: "创建文件夹?"
+    TITLE_CREATE_FOLDER: "创建文件夹"
     LABEL_NAME: "文件夹名称"
     LABEL_PARENT: "父文件夹"
     BUTTON_CREATE: "创建"
@@ -276,7 +276,7 @@ zh_CN:
     BUTTON_CLOSE: "关闭"
     TITLE_CREATING_PROCESS: "文件夹创建中"
   POPUPS_CLEAR_FOLDER:
-    TITLE_CLEAR_FOLDER: "清理文件夹中所有邮件?"
+    TITLE_CLEAR_FOLDER: "清理文件夹中所有邮件"
     BUTTON_CLEAR: "清理"
     BUTTON_CANCEL: "取消"
     BUTTON_CLOSE: "关闭"
