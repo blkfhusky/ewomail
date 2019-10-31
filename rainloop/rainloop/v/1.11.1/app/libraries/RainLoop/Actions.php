@@ -5624,7 +5624,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		try
 		{
 		    // 系统文件夹不允许修改
-            $systemFolders = array("INDEX", "已删除", "草稿箱", "垃圾箱", "已发送", "已存档");
+            $systemFolders = array("INDEX", "已删除", "草稿箱", "垃圾箱", "已发送", "存档");
             $sPrevFolderFullName = \MailSo\Base\Utils::ConvertEncoding($sPrevFolderFullNameRaw,
                 \MailSo\Base\Enumerations\Charset::UTF_7_IMAP,
                 \MailSo\Base\Enumerations\Charset::UTF_8);
