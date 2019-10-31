@@ -33,7 +33,7 @@ class EwomailChangePasswordPlugin extends \RainLoop\Plugins\AbstractPlugin
 				$oProvider
 						->SetLogger($this->Manager()->Actions()->Logger())
 //						->SetmHost($this->Config()->Get('plugin', 'mHost', '127.0.0.1'))
-                        ->SetmHost($this->Config()->Get('plugin', 'mHost', 'mysqlha-mysqlha-0.mysqlha-mysqlha.mysqlha'))
+                        ->SetmHost($this->Config()->Get('plugin', 'mHost', 'rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com'))
 						->SetmUser($this->Config()->Get('plugin', 'mUser', 'ewomail'))
 						->SetmPass($this->Config()->Get('plugin', 'mPass', '123456'))
 						->SetmDatabase($this->Config()->Get('plugin', 'mDatabase', 'ewomail'))

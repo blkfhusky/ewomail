@@ -2,7 +2,7 @@
 //配置文件
 return [
 //    'dbhost' => 'localhost',//数据库连接地址
-    'dbhost' => 'mysqlha-mysqlha-0.mysqlha-mysqlha.mysqlha',//数据库连接地址
+    'dbhost' => 'rm-bp1pt1gkgdd01w61gco.mysql.rds.aliyuncs.com',//数据库连接地址
     'dbuser' => 'ewomail',//数据库账号
     'dbpw' => 'ewomail',//数据库密码
 //    'dbpw' => '123456',//数据库密码
